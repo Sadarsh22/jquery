@@ -1,0 +1,217 @@
+<html>
+  <title>Index Page</title>
+  <head>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <style>
+    #deleteAll {
+      float: left;
+      margin: 5px 20px 30px 280px;
+    }
+  </style>
+  <body align="center">
+    <script>
+      function validateDelete() {
+        let del = document.getElementById("delete");
+        let cnf = confirm("are you sure you want to delete");
+      }
+
+      function selectAllCheckboxes() {
+        let val = document.getElementsByName("all");
+
+        if (val[0].checked == true) {
+          for (let i = 0; i < val.length; i++) {
+            val[i].checked = true;
+          }
+        } else if (val[0].checked == false) {
+          for (let i = 0; i < val.length; i++) {
+            val[i].checked = false;
+          }
+        }
+      }
+
+      function singleCheckbox() {
+        let val = document.getElementsByName("all");
+        if (val[0].checked == true) {
+          let c = 0;
+          for (let i = 1; i < val.length; i++) {
+            if (val[i].checked == false) c++;
+          }
+          if (c == val.length - 1) val[0].checked = false;
+          else val[0].checked = false;
+        } else {
+          let c = 0;
+          for (let i = 1; i < val.length; i++) {
+            if (val[i].checked == true) c++;
+          }
+          if (c == val.length - 1) val[0].checked = true;
+        }
+      }
+
+      function validateDeleteAll() {
+        let check = document.getElementsByName("all");
+        let c = 0;
+        for (let i = 0; i < check.length; i++) {
+          if (check[i].checked == true) c++;
+        }
+        if (c == 0) {
+          alert("please select atleast one record to delete");
+          return false;
+        } else if (c > 0) {
+          confirm("are you sure you want to delete");
+        }
+        return true;
+      }
+    </script>
+    <p>
+      <input
+        type="text"
+        name="searchbar"
+        id="searchbar"
+        placeholder="Search"
+      />&nbsp;
+      <input type="button" name="search" id="search" value="Search" />&nbsp;
+      <a href="registration.html"><button>+New</button></a>
+    </p>
+
+    <table border="2" bordercolor="orange" align="center" name="info">
+      <tr>
+        <th>
+          <input
+            type="checkbox"
+            id="all"
+            name="all"
+            value="0"
+            onclick="selectAllCheckboxes()"
+          />
+        </th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Image</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>
+          <input
+            type="checkbox"
+            id="all"
+            name="all"
+            value="1"
+            onclick="singleCheckbox()"
+          />
+        </td>
+        <td>Keshav</td>
+        <td>Bharadwaj</td>
+        <td>xyz@gmail.com</td>
+        <td>5453456789</td>
+        <td>
+          <img
+            src="../image/download.jpeg"
+            alt=""
+            srcset=""
+            height="100px"
+            width="100px"
+          />
+        </td>
+        <td>
+          <a href="#"
+            ><a href="#"> Edit </a> /
+            <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input
+            type="checkbox"
+            id="all"
+            name="all"
+            value="2"
+            onclick="singleCheckbox()"
+          />
+        </td>
+        <td>Sourav</td>
+        <td>Chowdhury</td>
+        <td>abc123@gmail.com</td>
+        <td>23436435362</td>
+        <td>
+          <img
+            src="../image/download.jpeg"
+            alt=""
+            srcset=""
+            height="100px"
+            width="100px"
+          />
+        </td>
+        <td>
+          <a href="#"> Edit </a> /
+          <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input
+            type="checkbox"
+            id="all"
+            name="all"
+            value="2"
+            onclick="singleCheckbox()"
+          />
+        </td>
+        <td>abhishek</td>
+        <td>singh</td>
+        <td>jhhqike@gmail.com</td>
+        <td>236435362</td>
+        <td>
+          <img
+            src="../image/download.jpeg"
+            alt=""
+            srcset=""
+            height="100px"
+            width="100px"
+          />
+        </td>
+        <td>
+          <a href="#"> Edit </a> /
+          <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input
+            type="checkbox"
+            id="all"
+            name="all"
+            value="2"
+            onclick="singleCheckbox()"
+          />
+        </td>
+        <td>tinku</td>
+        <td>yadav</td>
+        <td>tinkuji123@gmail.com</td>
+        <td>26436435362</td>
+        <td>
+          <img
+            src="../image/download.jpeg"
+            alt=""
+            srcset=""
+            height="100px"
+            width="100px"
+          />
+        </td>
+        <td>
+          <a href="#"> Edit </a> /
+          <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <button id="deleteAll" onclick="validateDeleteAll()">Delete All</button>
+  </body>
+</html>

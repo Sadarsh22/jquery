@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../jquery/node_modules/jquery/dist/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function sum()
+        {
+            let a=$("#first").val();
+            let b=$("#second").val();
+
+            if(!isNaN(a) && !isNaN(b))
+            $('#answer').val((a*1)+(b*1));
+            else
+            $('#answer').val(a+b);
+
+            
+        }
+
+    </script>
+
+    <input type="text" id="first" onkeypress="sum()">
+    <input type="text" id="second" onkeypress="sum()">
+    <br>
+    <br>
+    <input type="text" id="answer">
+</body>
+</html>
