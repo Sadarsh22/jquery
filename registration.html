@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script src="..//jquery/node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- <script src="../js/validation.js"></script> -->
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/validationUsingJquery.js"></script>
-    <!-- <form
-      name="applicationForm"
-      id="applicationForm"
-      method="post"
-      action=""
-      onsubmit="return validateForm()"
-    > -->
-    <form
-      name="applicationForm"
-      id="applicationForm"
-      method="post"
-      action=""
-
-    >
+    <form name="applicationForm" id="applicationForm" method="post" action="">
       <table border="2" bordercolor="orange" align="center">
         <th colspan="2">Application Form</th>
         <tr>
@@ -33,7 +19,6 @@
               name="First_Name"
               id="First_Name"
               value=""
-              onkeypress="callHideFirstName()"
             />
             <br />
             <span id="SFirst_Name"></span>
@@ -47,7 +32,6 @@
               name="Last_Name"
               id="Last_Name"
               value=""
-              onkeypress="callHideLastName()"
             />
             <br />
             <span id="SLast_Name"></span>
@@ -59,7 +43,6 @@
             <textarea
               name="address"
               id="address"
-              onkeypress="callHideAddress()"
             ></textarea>
             <br />
             <span id="SAddress"></span>
@@ -73,7 +56,6 @@
               name="email"
               id="email"
               value=""
-              onkeypress="callHideEmail()"
             />
             <br />
             <span id="SEmail"></span>
@@ -87,7 +69,6 @@
               name="Phone"
               id="Phone"
               value=""
-              onkeypress="callHidePhone()"
             />
             <br />
             <span id="SPhone"></span>
@@ -96,20 +77,8 @@
         <tr>
           <td align="middle">Gender</td>
           <td>
-            <input
-              type="radio"
-              name="Gender"
-              id="Gender"
-              value="1"
-              onclick="callHideGender()"
-            />Male
-            <input
-              type="radio"
-              name="Gender"
-              id="Gender"
-              value="2"
-              onclick="callHideGender()"
-            />Female
+            <input type="radio" name="Gender" id="Gender" value="1" />Male
+            <input type="radio" name="Gender" id="Gender" value="2" />Female
             <br />
             <span id="SGender"></span>
           </td>
@@ -121,7 +90,6 @@
               type="date"
               id="dob"
               name="dob"
-              onclick="callHideDateOfBirth()"
             />
             <br />
             <span id="SDob"></span>
@@ -135,21 +103,18 @@
               name="Language"
               id="Language"
               value="1"
-              onclick="callHideLanguage()"
             />English
             <input
               type="checkbox"
               name="Language"
               id="Language"
               value="2"
-              onclick="callHideLanguage()"
             />Hindi
             <input
               type="checkbox"
               name="Language"
               id="Language"
               value="3"
-              onclick="callHideLanguage()"
             />Bengali
             <br />
             <span id="SLanguage"></span>
@@ -158,7 +123,7 @@
         <tr>
           <td align="middle">Country</td>
           <td>
-            <select name="Country" id="Country" onclick="callHideCountry()">
+            <select name="Country" id="Country">
               <option value="0">--Select--</option>
               <option value="1">India</option>
               <option value="2">Nepal</option>
@@ -179,7 +144,6 @@
               name="File"
               id="File"
               value=""
-              onclick="callHideFile()"
             />
             <br />
             <span id="SFile"></span>
@@ -193,7 +157,6 @@
               name="password"
               id="password"
               value=""
-              onkeypress="callHidePassword()"
             />
             <br />
             <span id="SPassword"></span>
@@ -207,7 +170,6 @@
               name="confirmPassword"
               id="confirmPassword"
               value=""
-              onkeypress="callHideConfirmPassword()"
             />
             <br />
             <span id="SConfirmpassword"></span>
