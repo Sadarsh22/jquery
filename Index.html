@@ -10,6 +10,7 @@
     }
   </style>
   <body align="center">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       function validateDelete() {
         let del = document.getElementById("delete");
@@ -62,6 +63,17 @@
         }
         return true;
       }
+
+      $(document).ready(function(){
+        $(".view").click(function(){
+          $('#modal').fadeIn();
+        });
+        $('#modalButton').click(function(){
+          $('#modal').fadeOut();
+        });
+      });
+
+
     </script>
     <p>
       <input
@@ -73,6 +85,57 @@
       <input type="button" name="search" id="search" value="Search" />&nbsp;
       <a href="registration.html"><button>+New</button></a>
     </p>
+
+
+    <style >
+      #modal{
+        background-color: goldenrod;
+        display: none;
+        position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      #details{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      letter-spacing: 2px;
+      line-height: 1.5;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      }
+
+      #modalButton{
+        background-color: bisque;
+        font-size: 25px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+    </style>
+
+    <div id="modal">
+      <h1>User Details</h1>
+      <p id="details">First Name: Keshav</p>
+      <p id="details">Last Name: Bharadwaj</p>
+      <p id="details">Address: 123 Salt Lake Sector V 7000001</p>
+      <p id="details">Email: john.doe@example.com</p>
+      <p id="details">Phone: 1234567890</p>
+      <p id="details">Gender: Male</p>
+      <p id="details">Date Of Birth: 01/01/2000</p>
+      <p id="details">Language: English ,Hindi</p>
+      <p id="details">Country: India</p>
+      <!-- <p>File: <img src="..//images/download.jpeg"></p> -->
+      <button id="modalButton">Close</button>
+    </div>
+
 
     <table border="2" bordercolor="orange" align="center" name="info">
       <tr>
@@ -109,7 +172,7 @@
         <td>5453456789</td>
         <td>
           <img
-            src="../image/download.jpeg"
+            src="../images/download.jpeg"
             alt=""
             srcset=""
             height="100px"
@@ -117,8 +180,8 @@
           />
         </td>
         <td>
-          <a href="#"
-            ><a href="#"> Edit </a> /
+          <a href="#" class="view" >View</a> /
+          <a href="#"> Edit </a> /
             <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
           </a>
         </td>
@@ -140,7 +203,7 @@
         <td>23436435362</td>
         <td>
           <img
-            src="../image/download.jpeg"
+            src="../images/download.jpeg"
             alt=""
             srcset=""
             height="100px"
@@ -148,6 +211,7 @@
           />
         </td>
         <td>
+          <a href="#" class="view">View</a> /
           <a href="#"> Edit </a> /
           <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
         </td>
@@ -169,7 +233,7 @@
         <td>236435362</td>
         <td>
           <img
-            src="../image/download.jpeg"
+            src="../images/download.jpeg"
             alt=""
             srcset=""
             height="100px"
@@ -177,6 +241,7 @@
           />
         </td>
         <td>
+          <a href="#" class="view">View</a> /
           <a href="#"> Edit </a> /
           <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
         </td>
@@ -198,7 +263,7 @@
         <td>26436435362</td>
         <td>
           <img
-            src="../image/download.jpeg"
+            src="../images/download.jpeg"
             alt=""
             srcset=""
             height="100px"
@@ -206,6 +271,7 @@
           />
         </td>
         <td>
+          <a href="#" class="view">View</a> /
           <a href="#"> Edit </a> /
           <a href="#" id="Delete" onclick="validateDelete()"> Delete </a>
         </td>
@@ -215,3 +281,4 @@
     <button id="deleteAll" onclick="validateDeleteAll()">Delete All</button>
   </body>
 </html>
+
